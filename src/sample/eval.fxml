@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="evalPane" prefHeight="400.0" prefWidth="700.0" stylesheets="@Menu.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Eval_controller">
+    <children>
+        <TextArea fx:id="trace" layoutX="20.0" layoutY="54.0" prefHeight="259.0" prefWidth="543.0" text="Algorithme:  sémantique,&#10;Dataset: Yelp&#10;&#10;Initilisation..." AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+        <Button fx:id="lancer" layoutX="30.0" layoutY="340.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="109.0" styleClass="btn" text="Lancer évaluation" />
+        <Label layoutX="445.0" layoutY="349.0" text="MAE" />
+        <Label layoutX="558.0" layoutY="349.0" text="RMSE" />
+        <Label layoutX="30.0" layoutY="23.0" styleClass="h2" text="Trace d'exécution :" />
+        <TextField fx:id="MAE" layoutX="475.0" layoutY="345.0" prefHeight="24.0" prefWidth="55.0" />
+        <TextField fx:id="RMSE" layoutX="590.0" layoutY="345.0" prefHeight="24.0" prefWidth="55.0" />
+        <Button fx:id="buttonretour" layoutX="160.0" layoutY="340.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="109.0" styleClass="btn" text="Retour" />
+
+    </children>
+</AnchorPane>
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+.root{
+
+    -fx-font-size: 8pt;
+    -fx-background-color: #ffffff;
+}
+
+.title{
+    -fx-text-fill: #000080;
+    -fx-font-weight: bold;
+    -fx-font: 20pt sans-serif;
+
+}
+
+.content{
+    -fx-text-fill: #000000;
+    -fx-font-weight: normal;
+    -fx-font: 12pt sans-serif;
+
+}
+.BigText{
+    -fx-text-fill: #000000;
+    -fx-font-weight: normal;
+    -fx-font: 10pt sans-serif;
+
+}
+
+.h2{
+
+    -fx-font-size: 10pt;
+}
+
+.btn{
+
+    -fx-stroke: #000080;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000080;
+    -fx-background-radius:10;
+    -fx-border-radius:10;
+    -fx-border-color:#000080;
+    -fx-border-width: 1;
+    -fx-cursor:hand;
+}
+
+.btn:pressed{
+
+    -fx-background-color: #000080;
+    -fx-text-fill: #ffffff;
+}
+
+.drop{
+
+    -fx-stroke: #000080;
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #000080;
+    -fx-background-radius:10;
+    -fx-border-radius:10;
+    -fx-border-color:#000080;
+    -fx-border-width: 1;
+}
