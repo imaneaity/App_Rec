@@ -19,11 +19,12 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.awt.Desktop;
-import java.io.IOException;
+import java.io.*;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class Controller implements Initializable {
 
@@ -81,19 +82,29 @@ public class Controller implements Initializable {
 
         buttononto.setOnAction(new EventHandler<ActionEvent>() {
                                @Override public void handle(ActionEvent e) {
-
-                                   listebases.getValue();
-                                   System.out.println(listebases.getValue());
+                                   afficherOnto();
 
                                    try {
+                                       Process p = Runtime.getRuntime().exec("python -u C:\\Users\\lenovo\\Desktop\\App_Rec\\src\\sample\\ontos\\onto_Yelp.py");
+                                       Scanner in = new Scanner(p.getInputStream());
+                                       while (in.hasNextLine()) {
+                                           String res='\n'+in.nextLine();
+                                           System.out.println(res);
+                                       }
+                                       Scanner err = new Scanner(p.getErrorStream());
+                                       while (err.hasNextLine()) {
+                                           String res='\n'+err.nextLine();
+                                           System.out.println(res);
+                                       }
 
-                                       Desktop.getDesktop().browse(new URL("http://www.google.com").toURI());
+                                  } catch (IOException ex) {
+                                               ex.printStackTrace();
+                                           }
 
-                                   } catch (IOException e1) {
-                                       e1.printStackTrace();
-                                   } catch (URISyntaxException e1) {
-                                       e1.printStackTrace();
-                                   }
+
+
+
+
                                }
                            }
         );
@@ -123,9 +134,64 @@ public class Controller implements Initializable {
             }
         });
 
+    }
+
+    private void afficherOnto() {
+        String database=listebases.getValue();
+        switch (database) {
+            case "Yelp":
+                try {
+                    Process p = Runtime.getRuntime().exec("python -u C:\\Users\\lenovo\\Desktop\\App_Rec\\src\\sample\\ontos\\onto_Yelp.py");
+                    Scanner in = new Scanner(p.getInputStream());
+                    while (in.hasNextLine()) {
+                        String res='\n'+in.nextLine();
+                        System.out.println(res);
+                    }
+                    Scanner err = new Scanner(p.getErrorStream());
+                    while (err.hasNextLine()) {
+                        String res='\n'+err.nextLine();
+                        System.out.println(res);
+                    }
+                    break;
+
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            case "RED":
+                try {
+                    Process p = Runtime.getRuntime().exec("python -u C:\\Users\\lenovo\\Desktop\\App_Rec\\src\\sample\\ontos\\onto_red.py");
+                    Scanner in = new Scanner(p.getInputStream());
+                    while (in.hasNextLine()) {
+                        String res='\n'+in.nextLine();
+                        System.out.println(res);
+                    }
+                    Scanner err = new Scanner(p.getErrorStream());
+                    while (err.hasNextLine()) {
+                        String res='\n'+err.nextLine();
+                        System.out.println(res);
+                    }
+                    break;
+
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+
+            case "MovieLens":
+                Erreur();
+                break;
+
+        }
 
 
     }
+
+    private void Erreur() {
+        Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+        errorAlert.setHeaderText("Erreur");
+        errorAlert.setContentText("Vu le peu de categories que MovieLens a il n'est pas interessant de lui construire une ontologie");
+        errorAlert.showAndWait();
+    }
+
 
     private void LoadAlgo() throws IOException {
 

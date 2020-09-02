@@ -11,16 +11,16 @@ users=[]
 user_matrix={}
 user_neighbours={}
 sum_similarities={}
-f="C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\movielens100k_data.txt"
+f=r"C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\movielens100k.data.txt"
 
 
 
-dst_file="ml100kfriend.dat"
+dst_file=r"C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\ml100kfriend.dat"
 users_friends = pickle.load(open(dst_file, "rb") , encoding="bytes")
 
 
 
-df = pd.read_csv(f,sep='\t', header=None)
+df = pd.read_csv(r"C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\movielens100k.data.txt",sep='\t', header=None)
 
 for i, j in df.iterrows():
 
@@ -95,7 +95,7 @@ print(b)
 
 
 
-f="C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\movielens100k_data.txt"
+f=r"C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\movielens100k_data.txt"
 
 user_item={}
 user_avg={}
@@ -209,7 +209,7 @@ print("Rmse:    " , mean_squared_error(reel, prediction))
 
 #write the results
 
-o = open("C:\Users\lenovo\Desktop\App_Rec\src\sample\results\results_social_ml.txt",'w')
+o = open(r"C:\Users\lenovo\Desktop\App_Rec\src\sample\results\results_social_ml.txt",'w')
 
 for i in filelist:
   o.write(str(i[0])+" "+str(i[1])+" "+str(i[2])+"\n")

@@ -14,7 +14,7 @@ sum_similarities={}
 #****************************************Jaccard Similarity**************************************************
 
 #initier user 
-infile = open("C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\User_Yelp_Final.json", "r")
+infile = open(r"C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\User_Yelp_Final.json", "r")
 u = infile.readlines()
 
 
@@ -129,7 +129,7 @@ infile.close()
 #****************************************Predictions************************************************
 
 
-infile = open("C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\Review_Yelp_Friends_Final.json", "r")
+infile = open(r"C:\Users\lenovo\Desktop\App_Rec\src\sample\datasets\Review_Yelp_Friends_Final.json", "r")
 r = infile.readlines()
 
 
@@ -221,7 +221,7 @@ print("Rmse:    " , mean_squared_error(reel, prediction))
 
 #write the results
 
-o = open("C:\Users\lenovo\Desktop\App_Rec\src\sample\results\results_social_yelp.txt",'w')
+o = open(r"C:\Users\lenovo\Desktop\App_Rec\src\sample\results\results_social_yelp.txt",'w')
 
 for i in filelist:
   o.write(str(i[0])+" "+str(i[1])+" "+str(i[2])+"\n")
